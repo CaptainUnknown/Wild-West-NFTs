@@ -1,3 +1,43 @@
+@font-face {
+  font-family: 'Cowboy';
+  src: url('./assets/fonts/Cowboy.ttf');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800&family=Lato:wght@300;400&display=swap');
+}
+
+/* @font-face {
+  font-family: 'Danger';
+  src: url('./assets/fonts/Danger.ttf');
+} */
+
+:root {
+  --bg: #121212;
+  --bg2: #121212 !important;
+  --bg-accent: #202020;
+  --bg-accent2: #181818;
+  --primary: #9848ff;
+  --secondary: #0b37d9;
+  --nav-size: 70px;
+  --copyright-height: 100px;
+  --color-light: #808080;
+  --footer-height: 400px;
+  --min-body-height: calc(100vh - var(--nav-size) - var(--copyright-height) - var(--footer-height));
+  --text-color: white;
+  --gradient: linear-gradient(
+    #ad00ff 0.88%,
+    #9848ff 38.79%,
+    #0f8cff 74.7%,
+    #001aff 128.58%);
+  --font-primary: 'Cowboy';
+  --font-secondary: 'Danger';
+  --speed: 500ms;
+  --border-radius: 12px;
+  --border: 2px solid #202020;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +50,16 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+body::-webkit-scrollbar {
+  width: 0.4em;
+}
+
+body::-webkit-scrollbar-track {
+  background: #080808;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: white;
 }
