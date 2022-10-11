@@ -1,0 +1,5 @@
+.intro {
+  font-family: var(--font-secondary);
+  height: calc(100vh - var(--nav-size));
+  background-color: red;
+}
