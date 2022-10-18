@@ -1,5 +1,116 @@
-.intro {
-  font-family: var(--font-secondary);
-  height: calc(100vh - var(--nav-size));
-  background-color: red;
+.home {
+  color: white;
+  background-color: #121212;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#box {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  background-color: var(--primary);
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+.description p {
+  color: white;
+  font-size: 1.2rem;
+  font-family: 'Oswald';
+  font-weight: 200;
+  margin: 0;
+  padding: 4rem;
+  width: 40%;
+  text-align: justify;
+}
+
+.badgeButton {
+  color: var(--primary);
+  background-color: #3c3c3c79;
+  border-radius: var(--border-radius);
+  border: none;
+  width: fit-content;
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-family: 'Oswald';
+  padding: 20px 60px;
+  backdrop-filter: blur(10px);
+}
+
+.introHeading {
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.introHeading h1 {
+  font-family: 'Cowboy';
+  font-size: 5rem;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+.introHeading span {
+  font-family: 'Cowboy';
+  font-size: 3.5rem;
+  font-weight: 200;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  text-transform: uppercase;
+}
+.moreButton {
+  color: var(--primary);
+  background-color: transparent;
+  border: 1px solid var(--primary);
+  border-radius: var(--border-radius);
+  height: 50px;
+  width: 200px;
+
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.moreButton:hover {
+  background-color: var(--primary);
+  color: #121212;
+}
+
+.outro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.outro button {
+  color: #121212;
+  font-family: 'Cowboy';
+  font-size: 1.5rem;
+  background-color: var(--primary);
+  height: 60px;
+  width: 200px;
+  border-radius: var(--border-radius);
+  border: none;
+  margin-right: 20px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.outroButtons{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.1rem;
 }
