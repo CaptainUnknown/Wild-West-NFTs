@@ -23,11 +23,14 @@ function Navbar() {
     <>
 
       <div className={`nav ${show && "nav__black"}`}>
-        <a> HOME </a>
-        <a> HOME </a>
-        <a> HOME </a>
-        <a> HOME </a>
-        <a> HOME </a>
+        <div className='navAccent'></div>
+        <div className='navPages'>
+          <a> HOME </a>
+          <a> ABOUT </a>
+          <a> MORE </a>
+          <a> MY NFTS </a>
+          <button> CONNECT </button>
+        </div>
       </div>
 
     </>
