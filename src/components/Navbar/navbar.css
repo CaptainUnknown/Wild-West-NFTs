@@ -20,6 +20,10 @@
 nav a:hover {
     color: var(--primary);
 }
+.nav a::selection {
+    color: #121212;
+    background-color: var(--primary);
+}
 .nav a:nth-last-child(2) {
     margin-left: auto;
     
@@ -47,6 +51,10 @@ nav a:hover {
     background-color: var(--primary);
     color: #121212;
 }
+.nav button::selection {
+    color: #121212;
+    background-color: var(--primary);
+}
 
 .nav__black {
     top: 0;
@@ -66,12 +74,4 @@ nav a:hover {
 
     display: flex;
     flex-direction: row;
-}
-
-
-#box {
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
-    background-color: var(--primary);
 }
