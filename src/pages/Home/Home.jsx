@@ -2,6 +2,14 @@ import './home.css';
 import React from 'react';
 import { motion } from 'framer-motion/dist/framer-motion';
 import Logo from '../../components/Logo/Logo';
+
+import NFTCard1 from '../../assets/images/nft-card-1.png';
+import NFTCard2 from '../../assets/images/nft-card-2.png';
+import NFTCard3 from '../../assets/images/nft-card-3.png';
+import NFTCard4 from '../../assets/images/nft-card-4.png';
+import NFTCard5 from '../../assets/images/nft-card-5.png';
+//import NFTCard2 from '../../assets/';
+
 //<Logo/>
 function Home() {
 
@@ -11,17 +19,6 @@ function Home() {
     <div className='home'>
       <div className='a'> {/*<SomeIcon/>*/} Play Trailer </div>
       <div className='a'> Empty div with background </div>
-
-      <motion.div
-      className='NFTs'
-      initial={{ opacity: 0, scale: 0.5 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{
-        duration: 0.8,
-        delay: 0.5,
-        ease: [0, 0.71, 0.2, 1.01]
-      }}
-    >NFTs</motion.div>
       
       <div className='description'>
         <button className='badgeButton'> Break On through </button>
@@ -34,7 +31,7 @@ function Home() {
       <div className='description'>
         <button className='badgeButton'> Leave your mark </button>
         <div className='introHeading'>
-          <h1> FIRST TO THE FUTURE </h1>
+        <h1> FIRST TO </h1><span> THE </span><h1> FUTURE </h1>
         </div>
         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget nulla non neque cursus interdum eget sed ante. Maecenas eleifend nisi eget aliquam aliquet. Nunc condimentum ex feugiat, malesuada ante eu, pellentesque tellus. Sed fermentum dignissim arcu in bibendum. Etiam at gravida arcu. Suspendisse commodo purus condimentum diam egestas, quis consequat elit convallis. Praesent ligula ante, pharetra sed consectetur non, auctor quis urna. Aliquam felis magna, feugiat vitae ultrices eget, tempus quis augue. Ut eleifend, lorem nec mollis sagittis, elit arcu facilisis felis, nec pellentesque mauris diam eget massa. Aenean egestas tincidunt ipsum, in aliquet est pellentesque sodales. Integer tristique libero et tortor faucibus, quis mattis neque molestie. Etiam porttitor dui quis tristique ultricies. </p>
       </div>
@@ -46,7 +43,7 @@ function Home() {
       <div className='description'>
         <button className='badgeButton'> Own a Piece </button>
         <div className='introHeading'>
-          <h1> YOUR OTHERDEEDS AWAIT </h1>
+          <h1> YOUR </h1><span> NFTS</span><h1> AWAIT </h1>
         </div>
         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget nulla non neque cursus interdum eget sed ante. Maecenas eleifend nisi eget aliquam aliquet. Nunc condimentum ex feugiat, malesuada ante eu, pellentesque tellus. Sed fermentum dignissim arcu in bibendum. Etiam at gravida arcu. Suspendisse commodo purus condimentum diam egestas, quis consequat elit convallis. Praesent ligula ante, pharetra sed consectetur non, auctor quis urna. Aliquam felis magna, feugiat vitae ultrices eget, tempus quis augue. Ut eleifend, lorem nec mollis sagittis, elit arcu facilisis felis, nec pellentesque mauris diam eget massa. Aenean egestas tincidunt ipsum, in aliquet est pellentesque sodales. Integer tristique libero et tortor faucibus, quis mattis neque molestie. Etiam porttitor dui quis tristique ultricies. </p>
       </div>
@@ -65,22 +62,124 @@ function Home() {
       <div className='description'>
         <button className='badgeButton'> Interoperable </button>
         <div className='introHeading'>
-          <h1> COME AS YOU ARE </h1>
+        <h1> COME AS </h1><span> YOU</span><h1> ARE </h1>
         </div>
         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget nulla non neque cursus interdum eget sed ante. Maecenas eleifend nisi eget aliquam aliquet. Nunc condimentum ex feugiat, malesuada ante eu, pellentesque tellus. Sed fermentum dignissim arcu in bibendum. Etiam at gravida arcu. Suspendisse commodo purus condimentum diam egestas, quis consequat elit convallis. Praesent ligula ante, pharetra sed consectetur non, auctor quis urna. Aliquam felis magna, feugiat vitae ultrices eget, tempus quis augue. Ut eleifend, lorem nec mollis sagittis, elit arcu facilisis felis, nec pellentesque mauris diam eget massa. Aenean egestas tincidunt ipsum, in aliquet est pellentesque sodales. Integer tristique libero et tortor faucibus, quis mattis neque molestie. Etiam porttitor dui quis tristique ultricies. </p>
       </div>
 
-      <div className='slideshowLeft'>
-        SlideShow NFT Cards - Left
+      <div className='NFTWrapper'>
+        <motion.div
+        className='NFTMotion'
+        initial={{ x: -100 }}
+        animate={{ x: 1620 }}
+        transition={{ duration: 15, delay: 0, ease: 'linear', repeat: Infinity }}
+        >
+          <div className='NFT'>
+            <img src={ NFTCard1 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ NFTCard2 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ NFTCard3 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ NFTCard4 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ NFTCard5 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ NFTCard1 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ NFTCard2 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ NFTCard3 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ NFTCard4 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ NFTCard5 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ NFTCard1 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ NFTCard2 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ NFTCard3 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ NFTCard4 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ NFTCard5 } alt='NFT Name'/>
+          </div>
+        </motion.div>
       </div>
-      <div className='slideshowRight'>
-        SlideShow NFT Cards - Right
+
+
+      <div className='NFTWrapper'>
+        <motion.div
+        className='NFTMotion'
+        initial={{ x: 1620 }}
+        animate={{ x: -100 }}
+        transition={{ duration: 15, delay: 0, ease: 'linear', repeat: Infinity }}
+        >
+          <div className='NFT'>
+            <img src={ NFTCard1 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ NFTCard2 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ NFTCard3 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ NFTCard4 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ NFTCard5 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ NFTCard1 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ NFTCard2 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ NFTCard3 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ NFTCard4 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ NFTCard5 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ NFTCard1 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ NFTCard2 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ NFTCard3 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ NFTCard4 } alt='NFT Name'/>
+          </div>
+
+        </motion.div>
       </div>
 
       <div className='description'>
         <button className='badgeButton'> Make it your own </button>
         <div className='introHeading'>
-          <h1> CREATE FOR THE OTHERSIDE </h1>
+          <h1> CREATE FOR </h1><span> THE </span><h1> OTHERSIDE </h1>
         </div>
         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget nulla non neque cursus interdum eget sed ante. Maecenas eleifend nisi eget aliquam aliquet. Nunc condimentum ex feugiat, malesuada ante eu, pellentesque tellus. Sed fermentum dignissim arcu in bibendum. Etiam at gravida arcu. Suspendisse commodo purus condimentum diam egestas, quis consequat elit convallis. Praesent ligula ante, pharetra sed consectetur non, auctor quis urna. Aliquam felis magna, feugiat vitae ultrices eget, tempus quis augue. Ut eleifend, lorem nec mollis sagittis, elit arcu facilisis felis, nec pellentesque mauris diam eget massa. Aenean egestas tincidunt ipsum, in aliquet est pellentesque sodales. Integer tristique libero et tortor faucibus, quis mattis neque molestie. Etiam porttitor dui quis tristique ultricies. </p>
         <button className='moreButton'> Sign Up </button>
@@ -90,7 +189,7 @@ function Home() {
         {/* <CardGIF/> */}
         <button className='badgeButton'> Token </button>
         <div className='introHeading'>
-          <h1> COIN FOR YOUR VOYAGE </h1>
+          <h1> COIN FOR </h1><span> YOUR </span><h1> VOYAGE </h1>
         </div>
         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget nulla non neque cursus interdum eget sed ante. Maecenas eleifend nisi eget aliquam aliquet. Nunc condimentum ex feugiat, malesuada ante eu, pellentesque tellus. Sed fermentum dignissim arcu in bibendum. Etiam at gravida arcu. Suspendisse commodo purus condimentum diam egestas, quis consequat elit convallis. Praesent ligula ante, pharetra sed consectetur non, auctor quis urna. Aliquam felis magna, feugiat vitae ultrices eget, tempus quis augue. Ut eleifend, lorem nec mollis sagittis, elit arcu facilisis felis, nec pellentesque mauris diam eget massa. Aenean egestas tincidunt ipsum, in aliquet est pellentesque sodales. Integer tristique libero et tortor faucibus, quis mattis neque molestie. Etiam porttitor dui quis tristique ultricies. </p>
         <button className='moreButton'> Learn More </button>
@@ -99,7 +198,7 @@ function Home() {
       <div className='description'>
         <button className='badgeButton'> Immersive & Interactive </button>
         <div className='introHeading'>
-          <h1> GAME-CHANGING TECH </h1>
+          <h1> GAME-CHANGING</h1><span> TECH </span>
         </div>
         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget nulla non neque cursus interdum eget sed ante. Maecenas eleifend nisi eget aliquam aliquet. Nunc condimentum ex feugiat, malesuada ante eu, pellentesque tellus. Sed fermentum dignissim arcu in bibendum. Etiam at gravida arcu. Suspendisse commodo purus condimentum diam egestas, quis consequat elit convallis. Praesent ligula ante, pharetra sed consectetur non, auctor quis urna. Aliquam felis magna, feugiat vitae ultrices eget, tempus quis augue. Ut eleifend, lorem nec mollis sagittis, elit arcu facilisis felis, nec pellentesque mauris diam eget massa. Aenean egestas tincidunt ipsum, in aliquet est pellentesque sodales. Integer tristique libero et tortor faucibus, quis mattis neque molestie. Etiam porttitor dui quis tristique ultricies. </p>
         <button className='moreButton'> Learn More </button>

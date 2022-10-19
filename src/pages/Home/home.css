@@ -8,13 +8,26 @@
   align-items: center;
   justify-content: center;
 }
-
-#box {
-  width: 100px;
-  height: 100px;
-  border-radius: 10px;
+.home p::selection {
+  color: #121212;
+  background-color: var(--primary);
+} 
+.home h1::selection {
+  color: #121212;
+  background-color: var(--primary);
+} 
+.home span::selection {
+  color: #121212;
   background-color: var(--primary);
 }
+.home button::selection {
+  color: #121212;
+  background-color: var(--primary);
+}
+.home img::selection {
+  background-color: #d9cb9da1;
+}
+
 
 .description {
   display: flex;
@@ -64,7 +77,7 @@
   text-transform: uppercase;
 }
 .introHeading span {
-  font-family: 'Cowboy';
+  font-family: 'Danger';
   font-size: 3.5rem;
   font-weight: 200;
   margin-left: 1.5rem;
@@ -87,11 +100,44 @@
   color: #121212;
 }
 
+.NFTWrapper{
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+.NFTMotion{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+.NFT {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 6rem;
+}
+.NFT img {
+  height: 350px;
+  border-radius: var(--border-radius);
+}
+
 .outro {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.outro h1 {
+  font-family: 'Cowboy';
+  font-size: 5rem;
+  font-weight: 200;
+  text-transform: uppercase;
 }
 .outro button {
   color: #121212;
