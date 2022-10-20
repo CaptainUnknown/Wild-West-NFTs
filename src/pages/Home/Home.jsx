@@ -3,9 +3,6 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion/dist/framer-motion';
 import VanillaTilt from 'vanilla-tilt';
 
-
-import Logo from '../../components/Logo/Logo';
-
 import TopLogo from '../../assets/topLogo.png';
 import Splash from '../../assets/splash.jpg';
 import Space from '../../assets/spaceBackground.jpg';
@@ -20,9 +17,7 @@ import NFTCard4 from '../../assets/images/nft-card-4.png';
 import NFTCard5 from '../../assets/images/nft-card-5.png';
 
 import AccessPass from '../../assets/accessPass.gif';
-//import NFTCard2 from '../../assets/';
 
-//<Logo/>
 function Home() {
   const options = {
     scale: 1.3,
