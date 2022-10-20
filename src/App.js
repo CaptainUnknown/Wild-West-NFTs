@@ -7,6 +7,9 @@ import Home from "./pages/Home/Home";
 import Footer from "./components/Footer/Footer";
 
 function App() {
+  console.log("%cCaptain Unknown | Web3naut", "color:#53900F; border:20px; font-size: 20px; font-weight: bold;");
+  console.log('https://Web3naut.com')
+  
   return (
     <>
 
@@ -15,7 +18,7 @@ function App() {
 
         <Router>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={{ Home }} />
           </Routes>
         </Router>
 
