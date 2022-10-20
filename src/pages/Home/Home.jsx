@@ -275,9 +275,14 @@ function Home() {
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.5, duration: 0.5 }}>
-        <Tilt className="accessPass" options={options}>
-          <img src={ AccessPass } alt='Access Pass'/>
-        </Tilt>
+        <motion.div style={{ width: '100%', alignSelf: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+        initial={{ opacity: 0, y: 10, scale: 0.7 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ delay: 0.8, duration: 1 }}>
+          <Tilt className="accessPass" options={options}>
+            <img src={ AccessPass } alt='Access Pass'/>
+          </Tilt>
+        </motion.div>
         <button className='badgeButton'> Token </button>
         <div className='introHeading'>
           <h1> ACCESS PASS </h1><span> FOR </span><h1> YOUR VOYAGE </h1>

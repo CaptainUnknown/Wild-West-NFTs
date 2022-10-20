@@ -192,7 +192,7 @@
   align-items: center;
   border-radius: var(--border-radius);
   margin-bottom: 1rem;
-  width: 25%;
+  width: 350px;
 }
 .accessPass img {
   width: 100%;
