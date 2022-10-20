@@ -25,9 +25,9 @@ import AccessPass from '../../assets/accessPass.gif';
 //<Logo/>
 function Home() {
   const options = {
-    scale: 1.1,
-    speed: 1000,
-    max: 40
+    scale: 1.3,
+    speed: 7000,
+    max: 30
   };
 
   return (<>
