@@ -18,10 +18,25 @@
 
     width: 60%;
 }
+.footerCommunities span {
+    font-family: 'Oswald';
+    transition: all 0.2s ease-in-out;
+}
+.footerCommunities span::selection {
+    color: #121212;
+    background-color: var(--primary);
+}
+.footerCommunities span:hover {
+    filter: brightness(1.4);
+}
 .footerCommunities svg {
     fill: var(--primary);
     width: 25px;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.footerCommunities svg:hover {
+    filter: brightness(1.4);
 }
 
 .footerCommunitiesPages {
@@ -31,9 +46,14 @@
     align-items: center;
 }
 .footerCommunitiesPages a {
+    font-family: 'Oswald';
     margin-left: 10px;
     margin-right: 10px;
     cursor: pointer;
+}
+.footerCommunitiesPages a::selection {
+    color: #121212;
+    background-color: var(--primary);
 }
 
 .footerCommunitiesIcons {
@@ -52,4 +72,7 @@
 }
 .footerLogo img {
     width: 25rem;
+}
+.footerLogo img::selection {
+    background-color: var(--img-selection);
 }
