@@ -119,60 +119,6 @@ function Home() {
         </motion.div>
       </div>
 
-      <motion.div className='description' style={{"backgroundImage":`linear-gradient(rgba(18,18,18,1) 0%, rgba(18,18,18,0.7) 35%, rgba(18,18,18,0.7) 65%, rgba(18,18,18,1) 75%), url(${Splash})` }}
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.5, duration: 0.5 }}>
-        <button className='badgeButton'> Leave your mark </button>
-        <div className='introHeading'>
-        <h1> FIRST TO </h1><span> THE </span><h1> FUTURE </h1>
-        </div>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget nulla non neque cursus interdum eget sed ante. Maecenas eleifend nisi eget aliquam aliquet. Nunc condimentum ex feugiat, malesuada ante eu, pellentesque tellus. Sed fermentum dignissim arcu in bibendum. Etiam at gravida arcu. Suspendisse commodo purus condimentum diam egestas, quis consequat elit convallis. Praesent ligula ante, pharetra sed consectetur non, auctor quis urna. Aliquam felis magna, feugiat vitae ultrices eget, tempus quis augue. Ut eleifend, lorem nec mollis sagittis, elit arcu facilisis felis, nec pellentesque mauris diam eget massa. Aenean egestas tincidunt ipsum, in aliquet est pellentesque sodales. Integer tristique libero et tortor faucibus, quis mattis neque molestie. Etiam porttitor dui quis tristique ultricies. </p>
-      </motion.div>
-
-      <motion.div className='description' style={{"backgroundImage":`linear-gradient(rgba(18,18,18,1) 0%, rgba(18,18,18,0.8) 35%, rgba(18,18,18,0.8) 65%, rgba(18,18,18,1) 75%), url(${Space})` }}
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.5, duration: 0.5 }}>
-        <button className='badgeButton'> Own a Piece </button>
-        <div className='introHeading'>
-          <h1> YOUR </h1><span> NFTS</span><h1> AWAIT </h1>
-        </div>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget nulla non neque cursus interdum eget sed ante. Maecenas eleifend nisi eget aliquam aliquet. Nunc condimentum ex feugiat, malesuada ante eu, pellentesque tellus. Sed fermentum dignissim arcu in bibendum. Etiam at gravida arcu. Suspendisse commodo purus condimentum diam egestas, quis consequat elit convallis. Praesent ligula ante, pharetra sed consectetur non, auctor quis urna. Aliquam felis magna, feugiat vitae ultrices eget, tempus quis augue. Ut eleifend, lorem nec mollis sagittis, elit arcu facilisis felis, nec pellentesque mauris diam eget massa. Aenean egestas tincidunt ipsum, in aliquet est pellentesque sodales. Integer tristique libero et tortor faucibus, quis mattis neque molestie. Etiam porttitor dui quis tristique ultricies. </p>
-      </motion.div>
-      
-      <motion.div className='statsGrid'
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.5, duration: 0.5 }}>
-        <div className='statColumn'> 10 ETH
-          <span> Floor Price </span>
-          <div className='statLine'></div>
-          <p> Some Details go here </p>
-        </div>
-        <div className='statColumn'> 2000
-          <span> Community Members </span>
-          <div className='statLine'></div>
-          <p> Some Details go here </p>
-        </div>
-        <div className='statColumn'> 4096
-          <span> Total NFTs </span>
-          <div className='statLine'></div>
-          <p> Some Details go here </p>
-        </div>
-      </motion.div>
-
-      <motion.div className='description' style={{"backgroundImage":`linear-gradient(rgba(18,18,18,1) 0%, rgba(18,18,18,0.8) 35%, rgba(18,18,18,0.8) 65%, rgba(18,18,18,1) 75%), url(${Navy})` }}
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.5, duration: 0.5 }}>
-        <button className='badgeButton'> Interoperable </button>
-        <div className='introHeading'>
-        <h1> COME AS </h1><span> YOU</span><h1> ARE </h1>
-        </div>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget nulla non neque cursus interdum eget sed ante. Maecenas eleifend nisi eget aliquam aliquet. Nunc condimentum ex feugiat, malesuada ante eu, pellentesque tellus. Sed fermentum dignissim arcu in bibendum. Etiam at gravida arcu. Suspendisse commodo purus condimentum diam egestas, quis consequat elit convallis. Praesent ligula ante, pharetra sed consectetur non, auctor quis urna. Aliquam felis magna, feugiat vitae ultrices eget, tempus quis augue. Ut eleifend, lorem nec mollis sagittis, elit arcu facilisis felis, nec pellentesque mauris diam eget massa. Aenean egestas tincidunt ipsum, in aliquet est pellentesque sodales. Integer tristique libero et tortor faucibus, quis mattis neque molestie. Etiam porttitor dui quis tristique ultricies. </p>
-      </motion.div>
-
       <div className='NFTWrapper'>
         <motion.div
         className='NFTMotion'
@@ -227,6 +173,62 @@ function Home() {
           </div>
         </motion.div>
       </div>
+
+      <motion.div className='description' style={{"backgroundImage":`linear-gradient(rgba(18,18,18,1) 0%, rgba(18,18,18,0.7) 35%, rgba(18,18,18,0.7) 65%, rgba(18,18,18,1) 75%), url(${Splash})` }}
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.5, duration: 0.5 }}>
+        <button className='badgeButton'> Leave your mark </button>
+        <div className='introHeading'>
+        <h1> FIRST TO </h1><span> THE </span><h1> FUTURE </h1>
+        </div>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget nulla non neque cursus interdum eget sed ante. Maecenas eleifend nisi eget aliquam aliquet. Nunc condimentum ex feugiat, malesuada ante eu, pellentesque tellus. Sed fermentum dignissim arcu in bibendum. Etiam at gravida arcu. Suspendisse commodo purus condimentum diam egestas, quis consequat elit convallis. Praesent ligula ante, pharetra sed consectetur non, auctor quis urna. Aliquam felis magna, feugiat vitae ultrices eget, tempus quis augue. Ut eleifend, lorem nec mollis sagittis, elit arcu facilisis felis, nec pellentesque mauris diam eget massa. Aenean egestas tincidunt ipsum, in aliquet est pellentesque sodales. Integer tristique libero et tortor faucibus, quis mattis neque molestie. Etiam porttitor dui quis tristique ultricies. </p>
+      </motion.div>
+
+      <motion.div className='description' style={{"backgroundImage":`linear-gradient(rgba(18,18,18,1) 0%, rgba(18,18,18,0.8) 35%, rgba(18,18,18,0.8) 65%, rgba(18,18,18,1) 75%), url(${Space})` }}
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.5, duration: 0.5 }}>
+        <button className='badgeButton'> Own a Piece </button>
+        <div className='introHeading'>
+          <h1> YOUR </h1><span> NFTS</span><h1> AWAIT </h1>
+        </div>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget nulla non neque cursus interdum eget sed ante. Maecenas eleifend nisi eget aliquam aliquet. Nunc condimentum ex feugiat, malesuada ante eu, pellentesque tellus. Sed fermentum dignissim arcu in bibendum. Etiam at gravida arcu. Suspendisse commodo purus condimentum diam egestas, quis consequat elit convallis. Praesent ligula ante, pharetra sed consectetur non, auctor quis urna. Aliquam felis magna, feugiat vitae ultrices eget, tempus quis augue. Ut eleifend, lorem nec mollis sagittis, elit arcu facilisis felis, nec pellentesque mauris diam eget massa. Aenean egestas tincidunt ipsum, in aliquet est pellentesque sodales. Integer tristique libero et tortor faucibus, quis mattis neque molestie. Etiam porttitor dui quis tristique ultricies. </p>
+      </motion.div>
+      
+      <motion.div className='statsGrid'
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.5, duration: 0.5 }}>
+        <div className='statColumn'> 10 ETH
+          <span> Floor Price </span>
+          <div className='statLine'></div>
+          <p> Some Details go here </p>
+        </div>
+        <div className='statColumn'> 2000
+          <span> Community Members </span>
+          <div className='statLine'></div>
+          <p> Some Details go here </p>
+        </div>
+        <div className='statColumn'> 4096
+          <span> Total NFTs </span>
+          <div className='statLine'></div>
+          <p> Some Details go here </p>
+        </div>
+      </motion.div>
+
+      <motion.div className='description' style={{"backgroundImage":`linear-gradient(rgba(18,18,18,1) 0%, rgba(18,18,18,0.8) 35%, rgba(18,18,18,0.8) 65%, rgba(18,18,18,1) 75%), url(${Navy})` }}
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.5, duration: 0.5 }}>
+        <button className='badgeButton'> Interoperable </button>
+        <div className='introHeading'>
+        <h1> COME AS </h1><span> YOU</span><h1> ARE </h1>
+        </div>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget nulla non neque cursus interdum eget sed ante. Maecenas eleifend nisi eget aliquam aliquet. Nunc condimentum ex feugiat, malesuada ante eu, pellentesque tellus. Sed fermentum dignissim arcu in bibendum. Etiam at gravida arcu. Suspendisse commodo purus condimentum diam egestas, quis consequat elit convallis. Praesent ligula ante, pharetra sed consectetur non, auctor quis urna. Aliquam felis magna, feugiat vitae ultrices eget, tempus quis augue. Ut eleifend, lorem nec mollis sagittis, elit arcu facilisis felis, nec pellentesque mauris diam eget massa. Aenean egestas tincidunt ipsum, in aliquet est pellentesque sodales. Integer tristique libero et tortor faucibus, quis mattis neque molestie. Etiam porttitor dui quis tristique ultricies. </p>
+      </motion.div>
+
+
 
 
 
