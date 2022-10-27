@@ -10,13 +10,22 @@ import Navy from '../../assets/navyBlue.jpg';
 import Smoke from '../../assets/abstractSmoke.jpg';
 import WhiteSmoke from '../../assets/whiteSmoke.jpg';
 
-import NFTCard1 from '../../assets/images/nft-card-1.png';
-import NFTCard2 from '../../assets/images/nft-card-2.png';
-import NFTCard3 from '../../assets/images/nft-card-3.png';
-import NFTCard4 from '../../assets/images/nft-card-4.png';
-import NFTCard5 from '../../assets/images/nft-card-5.png';
+import CharactersNFTCard1 from '../../assets/images/characters/nft-card-1.png';
+import CharactersNFTCard2 from '../../assets/images/characters/nft-card-2.png';
+import CharactersNFTCard3 from '../../assets/images/characters/nft-card-3.png';
+import CharactersNFTCard4 from '../../assets/images/characters/nft-card-4.png';
+import CharactersNFTCard5 from '../../assets/images/characters/nft-card-5.png';
+import CharactersNFTCard6 from '../../assets/images/characters/nft-card-6.png';
+
+import MonstersNFTCard1 from '../../assets/images/monsters/nft-card-1.png';
+import MonstersNFTCard2 from '../../assets/images/monsters/nft-card-2.png';
+import MonstersNFTCard3 from '../../assets/images/monsters/nft-card-3.png';
+import MonstersNFTCard4 from '../../assets/images/monsters/nft-card-4.png';
+import MonstersNFTCard5 from '../../assets/images/monsters/nft-card-5.png';
 
 import AccessPass from '../../assets/accessPass.gif';
+
+import Logo from '../../components/Logo/Logo';
 
 function Home() {
   const options = {
@@ -28,8 +37,12 @@ function Home() {
   return (<>
 
     <div className='home'>
-      <div className='a'> {/*<SomeIcon/>*/} Play Trailer </div>
+      <div className='a'> {/*<PlayTrailerIcon/>*/} Play Trailer </div>
       <div className='spaceOut'></div>
+      
+      <div className='videoBackdrop'>
+        <Logo/>
+      </div>
 
       <motion.div className='description' style={{"backgroundImage":`linear-gradient(rgba(18,18,18,1) 0%, rgba(18,18,18,0.9) 35%, rgba(18,18,18,0.9) 65%, rgba(18,18,18,1) 75%), url(${TopLogo})`}}
       initial={{ opacity: 0, y: 10 }}
@@ -57,53 +70,62 @@ function Home() {
         <motion.div
         className='NFTMotion'
         initial={{ x: -100 }}
-        animate={{ x: 1620 }}
+        animate={{ x: 1964 }}
         transition={{ duration: 15, delay: 0, ease: 'linear', repeat: Infinity }}
         >
           <div className='NFT'>
-            <img src={ NFTCard1 } alt='NFT Name'/>
+            <img src={ CharactersNFTCard1 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard2 } alt='NFT Name'/>
+            <img src={ CharactersNFTCard2 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard3 } alt='NFT Name'/>
+            <img src={ CharactersNFTCard3 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard4 } alt='NFT Name'/>
+            <img src={ CharactersNFTCard4 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard5 } alt='NFT Name'/>
+            <img src={ CharactersNFTCard5 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard1 } alt='NFT Name'/>
+            <img src={ CharactersNFTCard6 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard2 } alt='NFT Name'/>
+            <img src={ CharactersNFTCard1 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard3 } alt='NFT Name'/>
+            <img src={ CharactersNFTCard2 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard4 } alt='NFT Name'/>
+            <img src={ CharactersNFTCard3 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard5 } alt='NFT Name'/>
+            <img src={ CharactersNFTCard4 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard1 } alt='NFT Name'/>
+            <img src={ CharactersNFTCard5 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard2 } alt='NFT Name'/>
+            <img src={ CharactersNFTCard6 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard3 } alt='NFT Name'/>
+            <img src={ CharactersNFTCard1 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard4 } alt='NFT Name'/>
+            <img src={ CharactersNFTCard2 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard5 } alt='NFT Name'/>
+            <img src={ CharactersNFTCard3 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ CharactersNFTCard4 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ CharactersNFTCard5 } alt='NFT Name'/>
+          </div>
+          <div className='NFT'>
+            <img src={ CharactersNFTCard6 } alt='NFT Name'/>
           </div>
         </motion.div>
       </div>
@@ -159,105 +181,54 @@ function Home() {
         transition={{ duration: 15, delay: 0, ease: 'linear', repeat: Infinity }}
         >
           <div className='NFT'>
-            <img src={ NFTCard1 } alt='NFT Name'/>
+            <img src={ MonstersNFTCard1 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard2 } alt='NFT Name'/>
+            <img src={ MonstersNFTCard2 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard3 } alt='NFT Name'/>
+            <img src={ MonstersNFTCard3 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard4 } alt='NFT Name'/>
+            <img src={ MonstersNFTCard4 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard5 } alt='NFT Name'/>
+            <img src={ MonstersNFTCard5 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard1 } alt='NFT Name'/>
+            <img src={ MonstersNFTCard1 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard2 } alt='NFT Name'/>
+            <img src={ MonstersNFTCard2 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard3 } alt='NFT Name'/>
+            <img src={ MonstersNFTCard3 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard4 } alt='NFT Name'/>
+            <img src={ MonstersNFTCard4 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard5 } alt='NFT Name'/>
+            <img src={ MonstersNFTCard5 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard1 } alt='NFT Name'/>
+            <img src={ MonstersNFTCard1 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard2 } alt='NFT Name'/>
+            <img src={ MonstersNFTCard2 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard3 } alt='NFT Name'/>
+            <img src={ MonstersNFTCard3 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard4 } alt='NFT Name'/>
+            <img src={ MonstersNFTCard4 } alt='NFT Name'/>
           </div>
           <div className='NFT'>
-            <img src={ NFTCard5 } alt='NFT Name'/>
+            <img src={ MonstersNFTCard5 } alt='NFT Name'/>
           </div>
         </motion.div>
       </div>
 
-      <div className='NFTWrapper'>
-        <motion.div
-        className='NFTMotion'
-        initial={{ x: 1620 }}
-        animate={{ x: -100 }}
-        transition={{ duration: 15, delay: 0, ease: 'linear', repeat: Infinity }}
-        >
-          <div className='NFT'>
-            <img src={ NFTCard1 } alt='NFT Name'/>
-          </div>
-          <div className='NFT'>
-            <img src={ NFTCard2 } alt='NFT Name'/>
-          </div>
-          <div className='NFT'>
-            <img src={ NFTCard3 } alt='NFT Name'/>
-          </div>
-          <div className='NFT'>
-            <img src={ NFTCard4 } alt='NFT Name'/>
-          </div>
-          <div className='NFT'>
-            <img src={ NFTCard5 } alt='NFT Name'/>
-          </div>
-          <div className='NFT'>
-            <img src={ NFTCard1 } alt='NFT Name'/>
-          </div>
-          <div className='NFT'>
-            <img src={ NFTCard2 } alt='NFT Name'/>
-          </div>
-          <div className='NFT'>
-            <img src={ NFTCard3 } alt='NFT Name'/>
-          </div>
-          <div className='NFT'>
-            <img src={ NFTCard4 } alt='NFT Name'/>
-          </div>
-          <div className='NFT'>
-            <img src={ NFTCard5 } alt='NFT Name'/>
-          </div>
-          <div className='NFT'>
-            <img src={ NFTCard1 } alt='NFT Name'/>
-          </div>
-          <div className='NFT'>
-            <img src={ NFTCard2 } alt='NFT Name'/>
-          </div>
-          <div className='NFT'>
-            <img src={ NFTCard3 } alt='NFT Name'/>
-          </div>
-          <div className='NFT'>
-            <img src={ NFTCard4 } alt='NFT Name'/>
-          </div>
 
-        </motion.div>
-      </div>
 
       <motion.div className='description' style={{"backgroundImage":`linear-gradient(rgba(18,18,18,1) 0%, rgba(18,18,18,0.9) 35%, rgba(18,18,18,0.9) 65%, rgba(18,18,18,1) 75%), url(${Smoke})` }}
       initial={{ opacity: 0, y: 10 }}
