@@ -122,8 +122,8 @@ function Home() {
       <div className='NFTWrapper'>
         <motion.div
         className='NFTMotion'
-        initial={{ x: -100 }}
-        animate={{ x: 1620 }}
+        initial={{ x: 1620 }}
+        animate={{ x: -100 }}
         transition={{ duration: 15, delay: 0, ease: 'linear', repeat: Infinity }}
         >
           <div className='NFT'>
