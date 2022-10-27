@@ -1,4 +1,9 @@
 .backdrop{
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
+}
+
+.backdrop video {
+    width: 100%;
 }

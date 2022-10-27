@@ -37,12 +37,8 @@ function Home() {
   return (<>
 
     <div className='home'>
-      <div className='a'> {/*<PlayTrailerIcon/>*/} Play Trailer </div>
-      <div className='spaceOut'></div>
-      
-      <div className='videoBackdrop'>
-        <Logo/>
-      </div>
+      <Logo/>
+
 
       <motion.div className='description' style={{"backgroundImage":`linear-gradient(rgba(18,18,18,1) 0%, rgba(18,18,18,0.9) 35%, rgba(18,18,18,0.9) 65%, rgba(18,18,18,1) 75%), url(${TopLogo})`}}
       initial={{ opacity: 0, y: 10 }}
@@ -60,7 +56,7 @@ function Home() {
         className='NFTMotion'
         initial={{ x: -100 }}
         animate={{ x: 1964 }}
-        transition={{ duration: 15, delay: 0, ease: 'linear', repeat: Infinity }}
+        transition={{ duration: 25, delay: 0, ease: 'linear', repeat: Infinity }}
         >
           <div className='NFT'>
             <img src={ CharactersNFTCard1 } alt='NFT Name'/>
@@ -124,7 +120,7 @@ function Home() {
         className='NFTMotion'
         initial={{ x: 1620 }}
         animate={{ x: -100 }}
-        transition={{ duration: 15, delay: 0, ease: 'linear', repeat: Infinity }}
+        transition={{ duration: 25, delay: 0, ease: 'linear', repeat: Infinity }}
         >
           <div className='NFT'>
             <img src={ MonstersNFTCard1 } alt='NFT Name'/>

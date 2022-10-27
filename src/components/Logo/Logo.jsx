@@ -1,15 +1,15 @@
 import './logo.css';
-//import  from '../../assets/.mp4'; //rename
+import OpeningShot from '../../assets/OpeningShot.mp4'; //rename
 
 import React from 'react';
 
 function Logo() {
-  //<source src={ /*name*/ } type="video/mp4" />
+  //
   return (
     <>
       <div className='backdrop'>
         <video autoPlay loop muted >
-            
+          <source src={ OpeningShot } type="video/mp4" />
         </video>
       </div>
     </>
