@@ -1,14 +1,19 @@
 import './home.css';
+import lottie from 'lottie-web';
+import VanillaTilt from 'vanilla-tilt';
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion/dist/framer-motion';
-import VanillaTilt from 'vanilla-tilt';
+//import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
+import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 
-import TopLogo from '../../assets/topLogo.png';
-import Splash from '../../assets/splash.jpg';
-import Space from '../../assets/spaceBackground.jpg';
 import Navy from '../../assets/navyBlue.jpg';
+import Splash from '../../assets/splash.jpg';
+import TopLogo from '../../assets/topLogo.png';
 import Smoke from '../../assets/abstractSmoke.jpg';
+import Space from '../../assets/spaceBackground.jpg';
 import WhiteSmoke from '../../assets/whiteSmoke.jpg';
+
+import animationData from '../../assets/lottieLogo.json';
 
 import CharactersNFTCard1 from '../../assets/images/characters/nft-card-1.png';
 import CharactersNFTCard2 from '../../assets/images/characters/nft-card-2.png';
@@ -28,17 +33,53 @@ import AccessPass from '../../assets/accessPass.gif';
 import Logo from '../../components/Logo/Logo';
 
 function Home() {
+  const lottieRef = React.useRef(null);
   const options = {
     scale: 1.3,
     speed: 7000,
     max: 30
   };
 
+  React.useEffect(() => {
+    var animDuration = 5000;
+    const anim = lottie.loadAnimation({
+      container: lottieRef.current,
+      renderer: "svg",
+      loop: false,
+      autoplay: false,
+
+      animationData
+    });
+
+    function animatebodymoving(duration) {
+      const scrollPosition = window.scrollY;
+      const maxFrames = anim.totalFrames;
+
+      const frame = (maxFrames / 100) * (scrollPosition / (duration / 100));
+
+      anim.goToAndStop(frame, true);
+    }
+    const onScroll = () => {
+      animatebodymoving(animDuration);
+    };
+
+    document.addEventListener("scroll", onScroll);
+
+    return () => {
+      anim.destroy();
+      document.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
   return (<>
 
     <div className='home'>
-      <Logo/>
-
+      <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.2, duration: 0.75 }}>
+        <Logo/>
+      </motion.div>
 
       <motion.div className='description' style={{"backgroundImage":`linear-gradient(rgba(18,18,18,1) 0%, rgba(18,18,18,0.9) 35%, rgba(18,18,18,0.9) 65%, rgba(18,18,18,1) 75%), url(${TopLogo})`}}
       initial={{ opacity: 0, y: 10 }}
@@ -48,7 +89,8 @@ function Home() {
         <div className='introHeading'>
           <h1> WILD WEST </h1><span> UNDEAD </span>
         </div>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget nulla non neque cursus interdum eget sed ante. Maecenas eleifend nisi eget aliquam aliquet. Nunc condimentum ex feugiat, malesuada ante eu, pellentesque tellus. Sed fermentum dignissim arcu in bibendum. Etiam at gravida arcu. Suspendisse commodo purus condimentum diam egestas, quis consequat elit convallis. Praesent ligula ante, pharetra sed consectetur non, auctor quis urna. Aliquam felis magna, feugiat vitae ultrices eget, tempus quis augue. Ut eleifend, lorem nec mollis sagittis, elit arcu facilisis felis, nec pellentesque mauris diam eget massa. Aenean egestas tincidunt ipsum, in aliquet est pellentesque sodales. Integer tristique libero et tortor faucibus, quis mattis neque molestie. Etiam porttitor dui quis tristique ultricies. </p>
+        <h2> We’ve been waiting for you… </h2>
+        <p> Wild West Undead (WWU) is an Open World gaming experience where players blast their way through hordes of ravenous walking dead, nightmarish hell spawn, and other horrors stalking the world around you. Prepare to rustle up some firepower, and peel back the mystery of how a massive mining settlement became a ghost town overnight; race against the clock to find the right artifacts and close the portal deep in the old mine before the demons turn you into a meat puppet; forge alliances, backstab your pals for fun, bathe in gore, and do whatever it takes to emerge bloody and victorious from Los Diablos county. Remember: Keep your friends close and your enemies closer! </p>
       </motion.div>
 
       <div className='NFTWrapper'>
@@ -176,9 +218,9 @@ function Home() {
       transition={{ delay: 0.5, duration: 0.5 }}>
         <button className='badgeButton'> Leave your mark </button>
         <div className='introHeading'>
-        <h1> FIRST TO </h1><span> THE </span><h1> FUTURE </h1>
+        <h1> CREATING THE </h1><span> WORLD! </span>
         </div>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget nulla non neque cursus interdum eget sed ante. Maecenas eleifend nisi eget aliquam aliquet. Nunc condimentum ex feugiat, malesuada ante eu, pellentesque tellus. Sed fermentum dignissim arcu in bibendum. Etiam at gravida arcu. Suspendisse commodo purus condimentum diam egestas, quis consequat elit convallis. Praesent ligula ante, pharetra sed consectetur non, auctor quis urna. Aliquam felis magna, feugiat vitae ultrices eget, tempus quis augue. Ut eleifend, lorem nec mollis sagittis, elit arcu facilisis felis, nec pellentesque mauris diam eget massa. Aenean egestas tincidunt ipsum, in aliquet est pellentesque sodales. Integer tristique libero et tortor faucibus, quis mattis neque molestie. Etiam porttitor dui quis tristique ultricies. </p>
+        <p> Wild West Undead is being built in Epic Games’ Unreal Engine 5 (UE5), the industry-leading gaming engine. UE5’s latest technology provides our developers with unparalleled capabilities to bring our vision to life. Our game mechanics have been inspired from popular third-person shooter games, while also blending in new-wave web3-enabled virtual worlds. WWU’s team is working towards delivering high-quality design visualizations and cinematic experiences across multiple platforms to reach as many people as possible so we can build a vast community. Epic Games has invested millions of dollars in Unreal Engine to support blockchain gaming technology, giving us a competitive edge in providing a cutting-edge experience to our players. </p>
       </motion.div>
 
       <motion.div className='description' style={{"backgroundImage":`linear-gradient(rgba(18,18,18,1) 0%, rgba(18,18,18,0.8) 35%, rgba(18,18,18,0.8) 65%, rgba(18,18,18,1) 75%), url(${Space})` }}
@@ -187,9 +229,9 @@ function Home() {
       transition={{ delay: 0.5, duration: 0.5 }}>
         <button className='badgeButton'> Own a Piece </button>
         <div className='introHeading'>
-          <h1> YOUR </h1><span> NFTS</span><h1> AWAIT </h1>
+          <h1> WHO WILL </h1><span> YOU </span><h1> BE? </h1>
         </div>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget nulla non neque cursus interdum eget sed ante. Maecenas eleifend nisi eget aliquam aliquet. Nunc condimentum ex feugiat, malesuada ante eu, pellentesque tellus. Sed fermentum dignissim arcu in bibendum. Etiam at gravida arcu. Suspendisse commodo purus condimentum diam egestas, quis consequat elit convallis. Praesent ligula ante, pharetra sed consectetur non, auctor quis urna. Aliquam felis magna, feugiat vitae ultrices eget, tempus quis augue. Ut eleifend, lorem nec mollis sagittis, elit arcu facilisis felis, nec pellentesque mauris diam eget massa. Aenean egestas tincidunt ipsum, in aliquet est pellentesque sodales. Integer tristique libero et tortor faucibus, quis mattis neque molestie. Etiam porttitor dui quis tristique ultricies. </p>
+        <p> Own your WWU persona: Purchase custom NFT characters; utilize tokenomics in our open world economy; purchase land plots to create custom structures through our building system; cast NFT characters into our content creation program, which would compensate the holder on any revenue generated from the content; and play our variety of game modes, including our Ghost Town Zombie Wave and Free For All Battle Levels for the potential of play to earn. </p>
       </motion.div>
       
       <motion.div className='statsGrid'
@@ -219,14 +261,12 @@ function Home() {
       transition={{ delay: 0.5, duration: 0.5 }}>
         <button className='badgeButton'> Interoperable </button>
         <div className='introHeading'>
-        <h1> COME AS </h1><span> YOU</span><h1> ARE </h1>
+        <h1> ENTER THE </h1><span> UNDEAD </span><h1> WEST </h1>
         </div>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget nulla non neque cursus interdum eget sed ante. Maecenas eleifend nisi eget aliquam aliquet. Nunc condimentum ex feugiat, malesuada ante eu, pellentesque tellus. Sed fermentum dignissim arcu in bibendum. Etiam at gravida arcu. Suspendisse commodo purus condimentum diam egestas, quis consequat elit convallis. Praesent ligula ante, pharetra sed consectetur non, auctor quis urna. Aliquam felis magna, feugiat vitae ultrices eget, tempus quis augue. Ut eleifend, lorem nec mollis sagittis, elit arcu facilisis felis, nec pellentesque mauris diam eget massa. Aenean egestas tincidunt ipsum, in aliquet est pellentesque sodales. Integer tristique libero et tortor faucibus, quis mattis neque molestie. Etiam porttitor dui quis tristique ultricies. </p>
+        <p style={{ paddingBottom: '0.4rem' }}> In 1948, a man named James W. Marshall found gold at a mill in Coloma, California, igniting the California Gold Rush, where hundreds of thousands of men came from all over the country in search of fortune. But it also brought members of the peyote and opium cartels who were looking to take over all the mines they could - by any means necessary. Deep in the Old Paiuches Desert, a reclusive tribe kept would-be settlers and cartel miners away from their sacred mountain; even going as far as disguising the mountain’s entrance with a chapel. On the base of the mountain, a town was built to keep an eye and give shelter to travelers. This was the birth of Los Diablos, California. A town where travelers rested for the night, where some came to hide, and others came to die. </p>
+        <p style={{ paddingTop: '0.4rem', paddingBottom: '0.4rem' }}> Unfortunately, spies found out about the secret treasure in the mountain. The Cartel sent miners who saw that the Chapel was a front that led to tunnels filled to the brim with gold;  taking everything by force, they turned it into coins, jewelry, and even weapons. This angered the spirits, which caused them to put a curse on the town: “Until the last piece of gold is returned, the town will be under a siege of demons every night, and on every full moon, no one would be able to leave the town, even those who just pass by.” The greed of the cartels made it difficult to trace down all of the gold, some of the locals even joined the Cartel, while others did all they could to protect the people from the evil hordes. </p>
+        <p style={{ paddingTop: '0.4rem' }}> Now, the town of Los Diablos is a hunting ground for the brave, the greedy, and those who have nothing to lose – so who exactly are you? </p>
       </motion.div>
-
-
-
-
 
       <motion.div className='description' style={{"backgroundImage":`linear-gradient(rgba(18,18,18,1) 0%, rgba(18,18,18,0.9) 35%, rgba(18,18,18,0.9) 65%, rgba(18,18,18,1) 75%), url(${Smoke})` }}
       initial={{ opacity: 0, y: 10 }}
