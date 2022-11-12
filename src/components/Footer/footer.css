@@ -7,6 +7,53 @@
 
     margin-top: 2rem;
 }
+.footer p {
+    font-family: 'Oswald';
+    font-size: 1rem;
+    font-weight: 200;
+    color: #747474;
+}
+
+.footerInput {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--primary);
+    overflow: hidden;
+}
+.footerInput input {
+    color: white;
+    width: 350px;
+    height: 80%;
+    background-color: var(--bg);
+    border: none;
+    padding-left: 1rem;
+
+    font-family: 'Oswald';
+    font-size: 1rem;
+    font-weight: 100;
+}
+.footerInput input:focus{
+    outline: none;
+}
+.footerInput button {
+    width: 100px;
+    height: 100%;
+    left: 5px;
+    background-color: var(--primary);
+    border: none;
+    font-family: 'Oswald';
+    font-size: 1rem;
+    font-weight: 100;
+    color: #121212;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
 
 .footerCommunities {
     display: flex;

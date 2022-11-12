@@ -14,6 +14,11 @@ function Footer() {
     <>
 
     <div className='footer'>
+      <p> Stay Up to date </p>
+      <div className='footerInput'>
+        <input type='text' placeholder='Email Address' />
+        <button> Subscribe </button>
+      </div>
 
       <div className='footerCommunities'>
         <span> © 2022 Wild West NFTs  </span>
