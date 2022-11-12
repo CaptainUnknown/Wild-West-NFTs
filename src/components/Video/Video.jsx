@@ -1,19 +1,20 @@
-import './logo.css';
-import OpeningShot from '../../assets/OpeningShot.mp4'; //rename
+import './video.css';
+import OpeningShot from '../../assets/OpeningShot.mp4'; //use props to pass in the video file
 
 import React from 'react';
 
-function Logo() {
-  //
+function Video() {
   return (
     <>
+    
       <div className='backdrop'>
         <video autoPlay loop muted >
           <source src={ OpeningShot } type="video/mp4" />
         </video>
       </div>
+
     </>
   );
 }
 
-export default Logo;
+export default Video;
