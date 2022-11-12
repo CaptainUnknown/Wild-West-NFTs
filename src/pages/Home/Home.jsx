@@ -3,8 +3,6 @@ import lottie from 'lottie-web';
 import VanillaTilt from 'vanilla-tilt';
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion/dist/framer-motion';
-//import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
-//import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 
 import Navy from '../../assets/navyBlue.jpg';
 import Splash from '../../assets/splash.jpg';
