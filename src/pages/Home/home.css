@@ -248,27 +248,39 @@
   gap: 2rem;
   grid-template-columns: repeat(2, 1fr);
   width: 100%;
-
+  align-items: center;
+  justify-items: center;
+  
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
 }
-.roadmapCard {
+.roadmapCard {  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: var(--border-radius);
   padding: 2rem;
-  min-height: 200px;
+  min-height: 300px;
+  min-width: 300px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--primary);
+  background-color: var(--bg);
+  transform-style: preserve-3d;
+  
+  transition: all 0.6s ease-in-out;
+}
+.roadmapCard:hover {
+  box-shadow: 0px 0px 15px 15px #d9cb9d14;
 }
 .roadmapCard h1 {
   color: var(--primary);
   font-family: 'Cowboy';
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 400;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   margin-top: 0;
+  transform: translateZ(40px);
 }
 .roadmapCard span {
   color: white;
@@ -277,6 +289,7 @@
   font-weight: 200;
   margin-bottom: 0.5rem;
   margin-top: 0;
+  transform: translateZ(40px);
 }
 .roadmapCard p {
   color: rgb(120, 120, 120);
@@ -285,26 +298,7 @@
   font-weight: 200;
   margin-bottom: 0;
   text-align: justify;
-}
-.roadmapThreeD {
-  transform-style: preserve-3d;
-  perspective: 1000px;
-  transform: translateZ(20px);
-}
-.roadmapThreeD h1 {
-  transform-style: preserve-3d;
-  perspective: 1000px;
   transform: translateZ(40px);
-}
-.roadmapThreeD span {
-  transform-style: preserve-3d;
-  perspective: 1000px;
-  transform: translateZ(30px);
-}
-.roadmapThreeD p {
-  transform-style: preserve-3d;
-  perspective: 1000px;
-  transform: translateZ(20px);
 }
 
 .outro {

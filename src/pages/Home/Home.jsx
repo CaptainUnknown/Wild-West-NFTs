@@ -38,7 +38,15 @@ function Home() {
   const options = {
     scale: 1.3,
     speed: 7000,
-    max: 30
+    max: 30,
+    gyroscope: true
+  };
+  const roadMapTiltOptions = {
+    ...options,
+    max: 15,
+    glare: true,
+    "max-glare": 0.2,
+    perspective: 1000, 
   };
 
   const controlLogoVis = () => {
@@ -308,61 +316,65 @@ function Home() {
         <p style={{ paddingTop: '0.4rem' }}> Building the future is a team effort — and we want you to be part of our team.</p>
       </motion.div>
 
-      <motion.div className='roadmap' style={{"backgroundImage":`linear-gradient(rgba(18,18,18,1) 0%, rgba(18,18,18,0.8) 35%, rgba(18,18,18,0.8) 65%, rgba(18,18,18,1) 75%), url(${Smoke})` }}
+      <motion.div className='roadmap' style={{"backgroundImage":`linear-gradient(rgba(18,18,18,1) 0%, rgba(18,18,18,0.95) 35%, rgba(18,18,18,0.95) 65%, rgba(18,18,18,1) 75%), url(${Smoke})` }}
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.5, duration: 0.5 }}>
+      transition={{ delay: 0.5, duration: 0.8 }}>
 
-        <motion.div className='roadmapCard'
+        <motion.div style={{ width: '50%' }}
         initial={{ opacity: 0, y: 10, scale: 0.7 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ delay: 0.5, duration: 0.5 }}>
-          <Tilt options={{ ...options, max: 15 }}>
-            <div className="roadmapThreeD">
-              <h1> Q1 2023 </h1>
-              <span> Open up the game to Pioneer Access Passes </span>
-              <p>• Survival Mode</p>
-              <p>• Zombie & Quest Mode</p>
-              <p>• Casino Alpha Release</p>
-              <p>• Play to Earn Cannabis Farming</p>
-              <p>• Airdrop Native Tokens to the User – Community Building</p>
-            </div>
+        transition={{ delay: 0.5, duration: 1 }}>
+          <Tilt options={roadMapTiltOptions} className="roadmapCard">
+            <h1> Q1 2023 </h1>
+            <span> Open up the game to Pioneer Access Passes </span>
+            <p>• Survival Mode</p>
+            <p>• Zombie & Quest Mode</p>
+            <p>• Casino Alpha Release</p>
+            <p>• Play to Earn Cannabis Farming</p>
+            <p>• Airdrop Native Tokens to the User – Community Building</p>
           </Tilt>
         </motion.div>
 
-        <motion.div className='roadmapCard'
+        <motion.div style={{ width: '50%' }}
         initial={{ opacity: 0, y: 10, scale: 0.7 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ delay: 0.8, duration: 0.5 }}>
-          <h1> Q2 2023 </h1>
-          <span> DEX – Banking System and CasinoLive </span>
-          <span> Ingame econnomy - Tokenomics </span>
-          <p>• Player vs Player Mode /Zombie Mode /Bounty Hunter Game Mode</p>
-          <p>• Earn by farming</p>
-          <p>• Earn by playing quests</p>
+        transition={{ delay: 0.8, duration: 1 }}>
+          <Tilt options={roadMapTiltOptions} className="roadmapCard">
+            <h1> Q2 2023 </h1>
+            <span> DEX – Banking System and CasinoLive </span>
+            <span> Ingame econnomy - Tokenomics </span>
+            <p>• Player vs Player Mode /Zombie Mode /Bounty Hunter Game Mode</p>
+            <p>• Earn by farming</p>
+            <p>• Earn by playing quests</p>
+          </Tilt>
         </motion.div>
 
-        <motion.div className='roadmapCard'
+        <motion.div style={{ width: '50%' }}
         initial={{ opacity: 0, y: 10, scale: 0.7 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ delay: 1.1, duration: 0.5 }}>
-          <h1> Q3 2023 </h1>
-          <span> Tokenomics from the game & from the exchanges </span>
-          <span> Merch Drop for Designer Brands </span>
-          <span> Secure Brand Deals & Release Renderings </span>
-          <span> Physical & Mintable Pieces in the Metaverse </span> 
+        transition={{ delay: 1.1, duration: 1 }}>
+          <Tilt options={roadMapTiltOptions} className="roadmapCard">
+            <h1> Q3 2023 </h1>
+            <span> Tokenomics from the game & from the exchanges </span>
+            <span> Merch Drop for Designer Brands </span>
+            <span> Secure Brand Deals & Release Renderings </span>
+            <span> Physical & Mintable Pieces in the Metaverse </span>
+          </Tilt>
         </motion.div>
 
-        <motion.div className='roadmapCard'
+        <motion.div style={{ width: '50%' }}
         initial={{ opacity: 0, y: 10, scale: 0.7 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ delay: 1.4, duration: 0.5 }}>
-          <h1> Q4 2023 </h1>
-          <span> Marketing Strategies (NFT Drop, Airdrop, Maps) </span>
-          <span> Maps & Feature Updates </span>
-          <span> Play to Earn </span>
-          <span> Competitions </span>
-          <span> Marketing – Social Media, Gaming Influencers, Twitch Streamers </span> 
+        transition={{ delay: 1.4, duration: 1 }}>
+          <Tilt options={roadMapTiltOptions} className="roadmapCard">
+            <h1> Q4 2023 </h1>
+            <span> Marketing Strategies (NFT Drop, Airdrop, Maps) </span>
+            <span> Maps & Feature Updates </span>
+            <span> Play to Earn </span>
+            <span> Competitions </span>
+            <span> Marketing – Social Media, Influencers, Streamers </span>
+          </Tilt>
         </motion.div>
       </motion.div>
 
