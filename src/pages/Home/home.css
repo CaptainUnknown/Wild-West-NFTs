@@ -15,7 +15,11 @@
 .home h1::selection {
   color: #121212;
   background-color: var(--primary);
-} 
+}
+.home h2::selection {
+  color: #121212;
+  background-color: var(--primary);
+}
 .home span::selection {
   color: #121212;
   background-color: var(--primary);
@@ -26,6 +30,31 @@
 }
 .home img::selection {
   background-color: var(--img-selection);
+}
+
+.lottieWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 600vh;
+  pointer-events: none;
+}
+
+.lottie {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  transition: 0.5s;
+  transition-timing-function: ease-in;
+  top: calc(-1 * var(--nav-size));
+  top: 0;
+  pointer-events: none;
+}
+.lottie__vis {
+  top: 0;
+  width: 100%;
 }
 
 .spaceOut {
@@ -212,6 +241,70 @@
 .accessPass img {
   width: 100%;
   border-radius: var(--border-radius);
+}
+
+.roadmap {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+.roadmapCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  min-height: 200px;
+}
+.roadmapCard h1 {
+  color: var(--primary);
+  font-family: 'Cowboy';
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+}
+.roadmapCard span {
+  color: white;
+  font-family: 'Oswald';
+  font-size: 1rem;
+  font-weight: 200;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+.roadmapCard p {
+  color: rgb(120, 120, 120);
+  font-family: 'Oswald';
+  font-size: 0.7rem;
+  font-weight: 200;
+  margin-bottom: 0;
+  text-align: justify;
+}
+.roadmapThreeD {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transform: translateZ(20px);
+}
+.roadmapThreeD h1 {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transform: translateZ(40px);
+}
+.roadmapThreeD span {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transform: translateZ(30px);
+}
+.roadmapThreeD p {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transform: translateZ(20px);
 }
 
 .outro {

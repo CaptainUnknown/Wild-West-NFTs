@@ -1,10 +1,10 @@
 import './home.css';
 import lottie from 'lottie-web';
 import VanillaTilt from 'vanilla-tilt';
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion/dist/framer-motion';
 //import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
-import { Parallax, ParallaxLayer } from '@react-spring/parallax';
+//import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 
 import Navy from '../../assets/navyBlue.jpg';
 import Splash from '../../assets/splash.jpg';
@@ -30,18 +30,34 @@ import MonstersNFTCard5 from '../../assets/images/monsters/nft-card-5.png';
 
 import AccessPass from '../../assets/accessPass.gif';
 
-import Logo from '../../components/Logo/Logo';
+import Video from '../../components/Video/Video';
 
 function Home() {
-  const lottieRef = React.useRef(null);
+  const [ logoVis, setLogoVis ] = useState(false);
+  const lottieRef = useRef(null);
   const options = {
     scale: 1.3,
     speed: 7000,
     max: 30
   };
 
-  React.useEffect(() => {
-    var animDuration = 5000;
+  const controlLogoVis = () => {
+    if (window.scrollY > 100){
+      setLogoVis(true)
+    } else {
+      setLogoVis(false)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', controlLogoVis);
+    return () => {
+      window.removeEventListener('scroll', controlLogoVis);
+    }
+  }, [])
+
+  useEffect(() => {
+    var animDuration = 4000;
     const anim = lottie.loadAnimation({
       container: lottieRef.current,
       renderer: "svg",
@@ -54,9 +70,7 @@ function Home() {
     function animatebodymoving(duration) {
       const scrollPosition = window.scrollY;
       const maxFrames = anim.totalFrames;
-
       const frame = (maxFrames / 100) * (scrollPosition / (duration / 100));
-
       anim.goToAndStop(frame, true);
     }
     const onScroll = () => {
@@ -72,13 +86,16 @@ function Home() {
   }, []);
 
   return (<>
-
     <div className='home'>
+      <div className='lottieWrapper'>
+        <div  className={`lottie ${logoVis && "lottie__vis"}`} ref={ lottieRef }></div>
+      </div>
+
       <motion.div
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2, duration: 0.75 }}>
-        <Logo/>
+        <Video/>
       </motion.div>
 
       <motion.div className='description' style={{"backgroundImage":`linear-gradient(rgba(18,18,18,1) 0%, rgba(18,18,18,0.9) 35%, rgba(18,18,18,0.9) 65%, rgba(18,18,18,1) 75%), url(${TopLogo})`}}
@@ -266,18 +283,7 @@ function Home() {
         <p style={{ paddingBottom: '0.4rem' }}> In 1948, a man named James W. Marshall found gold at a mill in Coloma, California, igniting the California Gold Rush, where hundreds of thousands of men came from all over the country in search of fortune. But it also brought members of the peyote and opium cartels who were looking to take over all the mines they could - by any means necessary. Deep in the Old Paiuches Desert, a reclusive tribe kept would-be settlers and cartel miners away from their sacred mountain; even going as far as disguising the mountain’s entrance with a chapel. On the base of the mountain, a town was built to keep an eye and give shelter to travelers. This was the birth of Los Diablos, California. A town where travelers rested for the night, where some came to hide, and others came to die. </p>
         <p style={{ paddingTop: '0.4rem', paddingBottom: '0.4rem' }}> Unfortunately, spies found out about the secret treasure in the mountain. The Cartel sent miners who saw that the Chapel was a front that led to tunnels filled to the brim with gold;  taking everything by force, they turned it into coins, jewelry, and even weapons. This angered the spirits, which caused them to put a curse on the town: “Until the last piece of gold is returned, the town will be under a siege of demons every night, and on every full moon, no one would be able to leave the town, even those who just pass by.” The greed of the cartels made it difficult to trace down all of the gold, some of the locals even joined the Cartel, while others did all they could to protect the people from the evil hordes. </p>
         <p style={{ paddingTop: '0.4rem' }}> Now, the town of Los Diablos is a hunting ground for the brave, the greedy, and those who have nothing to lose – so who exactly are you? </p>
-      </motion.div>
-
-      <motion.div className='description' style={{"backgroundImage":`linear-gradient(rgba(18,18,18,1) 0%, rgba(18,18,18,0.9) 35%, rgba(18,18,18,0.9) 65%, rgba(18,18,18,1) 75%), url(${Smoke})` }}
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.5, duration: 0.5 }}>
-        <button className='badgeButton'> Make it your own </button>
-        <div className='introHeading'>
-          <h1> CREATE FOR </h1><span> THE </span><h1> OTHERSIDE </h1>
-        </div>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget nulla non neque cursus interdum eget sed ante. Maecenas eleifend nisi eget aliquam aliquet. Nunc condimentum ex feugiat, malesuada ante eu, pellentesque tellus. Sed fermentum dignissim arcu in bibendum. Etiam at gravida arcu. Suspendisse commodo purus condimentum diam egestas, quis consequat elit convallis. Praesent ligula ante, pharetra sed consectetur non, auctor quis urna. Aliquam felis magna, feugiat vitae ultrices eget, tempus quis augue. Ut eleifend, lorem nec mollis sagittis, elit arcu facilisis felis, nec pellentesque mauris diam eget massa. Aenean egestas tincidunt ipsum, in aliquet est pellentesque sodales. Integer tristique libero et tortor faucibus, quis mattis neque molestie. Etiam porttitor dui quis tristique ultricies. </p>
-        <button className='moreButton'> Sign Up </button>
+        <button className='moreButton'> Read The Full Story </button>
       </motion.div>
 
       <motion.div className='description' style={{"backgroundImage":`linear-gradient(rgba(18,18,18,1) 0%, rgba(18,18,18,0.8) 35%, rgba(18,18,18,0.8) 65%, rgba(18,18,18,1) 75%), url(${WhiteSmoke})` }}
@@ -292,30 +298,72 @@ function Home() {
             <img src={ AccessPass } alt='Access Pass'/>
           </Tilt>
         </motion.div>
-        <button className='badgeButton'> Token </button>
+        <button className='badgeButton'> Access Pass </button>
         <div className='introHeading'>
-          <h1> ACCESS PASS </h1><span> FOR </span><h1> YOUR VOYAGE </h1>
+          <h1> ACCESS FOR YOUR </h1><span> JOURNEY </span>
         </div>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget nulla non neque cursus interdum eget sed ante. Maecenas eleifend nisi eget aliquam aliquet. Nunc condimentum ex feugiat, malesuada ante eu, pellentesque tellus. Sed fermentum dignissim arcu in bibendum. Etiam at gravida arcu. Suspendisse commodo purus condimentum diam egestas, quis consequat elit convallis. Praesent ligula ante, pharetra sed consectetur non, auctor quis urna. Aliquam felis magna, feugiat vitae ultrices eget, tempus quis augue. Ut eleifend, lorem nec mollis sagittis, elit arcu facilisis felis, nec pellentesque mauris diam eget massa. Aenean egestas tincidunt ipsum, in aliquet est pellentesque sodales. Integer tristique libero et tortor faucibus, quis mattis neque molestie. Etiam porttitor dui quis tristique ultricies. </p>
-        <button className='moreButton'> Learn More </button>
+        <h2> A game made by the people, for the people </h2>
+        <p style={{ paddingBottom: '0.4rem' }}> Our mission is to make Wild West Undead an immersive, interactive, and collaborative experience, co-created with the help of our community. The initial drop of our Pioneer Access Pass will give holders the opportunity to contribute to the development of Wild West Undead. We know our success will be based on the feedback we receive from our gamers, so we’re dedicated to creating a world that our players enjoy. </p>
+        <p style={{ paddingTop: '0.4rem', paddingBottom: '0.4rem' }}> Holders of the Pioneer Lifetime Pass will not only be initial contributors to WWU, but they’ll also be able to participate in future prototype builds, demos, and tests that shape the final game design and experience. Other benefits of having the pass include: Copy of the Wild West Undead demo and all future versions of the project, Private discord access, VIP access to any WWU live events, priority notification of any merchandise drops, whitelist access to obtain first generation 3D game characters with unique serial numbers that show authenticity to the owner. There will also be exclusive airdrops for pass holders, including in-game currency $GOLD, exclusive NFTS, files to use characters as avatars for Social Media, Zoom or Vtubing, and 3D print characters with blender and Unreal Engine files. </p>
+        <p style={{ paddingTop: '0.4rem' }}> Building the future is a team effort — and we want you to be part of our team.</p>
       </motion.div>
 
-      <motion.div className='description'  style={{"backgroundImage":`linear-gradient(rgba(18,18,18,1) 0%, rgba(18,18,18,0.8) 35%, rgba(18,18,18,0.8) 65%, rgba(18,18,18,1) 75%), url(${Splash})` }}
+      <motion.div className='roadmap' style={{"backgroundImage":`linear-gradient(rgba(18,18,18,1) 0%, rgba(18,18,18,0.8) 35%, rgba(18,18,18,0.8) 65%, rgba(18,18,18,1) 75%), url(${Smoke})` }}
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.5, duration: 0.5 }}>
-        <button className='badgeButton'> Immersive & Interactive </button>
-        <div className='introHeading'>
-          <h1> GAME-CHANGING</h1><span> TECH </span>
-        </div>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget nulla non neque cursus interdum eget sed ante. Maecenas eleifend nisi eget aliquam aliquet. Nunc condimentum ex feugiat, malesuada ante eu, pellentesque tellus. Sed fermentum dignissim arcu in bibendum. Etiam at gravida arcu. Suspendisse commodo purus condimentum diam egestas, quis consequat elit convallis. Praesent ligula ante, pharetra sed consectetur non, auctor quis urna. Aliquam felis magna, feugiat vitae ultrices eget, tempus quis augue. Ut eleifend, lorem nec mollis sagittis, elit arcu facilisis felis, nec pellentesque mauris diam eget massa. Aenean egestas tincidunt ipsum, in aliquet est pellentesque sodales. Integer tristique libero et tortor faucibus, quis mattis neque molestie. Etiam porttitor dui quis tristique ultricies. </p>
-        <button className='moreButton'> Learn More </button>
-        <div className='featuresGrid'>
-          <div className='card'></div>
-          <div className='card'></div>
-          <div className='card'></div>
-          <div className='card'></div>
-        </div>
+
+        <motion.div className='roadmapCard'
+        initial={{ opacity: 0, y: 10, scale: 0.7 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ delay: 0.5, duration: 0.5 }}>
+          <Tilt options={{ ...options, max: 15 }}>
+            <div className="roadmapThreeD">
+              <h1> Q1 2023 </h1>
+              <span> Open up the game to Pioneer Access Passes </span>
+              <p>• Survival Mode</p>
+              <p>• Zombie & Quest Mode</p>
+              <p>• Casino Alpha Release</p>
+              <p>• Play to Earn Cannabis Farming</p>
+              <p>• Airdrop Native Tokens to the User – Community Building</p>
+            </div>
+          </Tilt>
+        </motion.div>
+
+        <motion.div className='roadmapCard'
+        initial={{ opacity: 0, y: 10, scale: 0.7 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ delay: 0.8, duration: 0.5 }}>
+          <h1> Q2 2023 </h1>
+          <span> DEX – Banking System and CasinoLive </span>
+          <span> Ingame econnomy - Tokenomics </span>
+          <p>• Player vs Player Mode /Zombie Mode /Bounty Hunter Game Mode</p>
+          <p>• Earn by farming</p>
+          <p>• Earn by playing quests</p>
+        </motion.div>
+
+        <motion.div className='roadmapCard'
+        initial={{ opacity: 0, y: 10, scale: 0.7 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ delay: 1.1, duration: 0.5 }}>
+          <h1> Q3 2023 </h1>
+          <span> Tokenomics from the game & from the exchanges </span>
+          <span> Merch Drop for Designer Brands </span>
+          <span> Secure Brand Deals & Release Renderings </span>
+          <span> Physical & Mintable Pieces in the Metaverse </span> 
+        </motion.div>
+
+        <motion.div className='roadmapCard'
+        initial={{ opacity: 0, y: 10, scale: 0.7 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ delay: 1.4, duration: 0.5 }}>
+          <h1> Q4 2023 </h1>
+          <span> Marketing Strategies (NFT Drop, Airdrop, Maps) </span>
+          <span> Maps & Feature Updates </span>
+          <span> Play to Earn </span>
+          <span> Competitions </span>
+          <span> Marketing – Social Media, Gaming Influencers, Twitch Streamers </span> 
+        </motion.div>
       </motion.div>
 
       <motion.div className='outro'
